@@ -9,6 +9,7 @@ import { axios } from "../config/const";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 import { FaLaptopCode, FaSchool, FaUserGraduate } from "react-icons/fa";
 import { AiFillSafetyCertificate, AiOutlineTrophy } from "react-icons/ai";
+import Head from "next/head";
 
 interface historicProps {
   id: string;
@@ -73,6 +74,26 @@ const About: NextPage = () => {
 
   return (
     <div className="min-h-screen bg-slate-900 flex">
+      <Head>
+        <meta charSet="utf-8" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+          name="description"
+          content="Benoit Garcia, Développeur fullstack javascript sur Montpellier"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.benoitgarcia.dev/" />
+        <meta property="og:title" content="Benoit Garcia - A-propos de moi" />
+        <meta
+          property="og:description"
+          content="Benoit Garcia, Développeur fullstack javascript sur Montpellier"
+        />
+        <meta property="og:image" content="" />
+
+        <title>Benoit Garcia - A-propos de moi</title>
+      </Head>
       <NavBar />
       <div className="text-white p-4 w-full flex flex-col items-center">
         <h1 className="font-bold text-4xl text-indigo-400">À PROPOS</h1>
@@ -84,7 +105,7 @@ const About: NextPage = () => {
             <div className="w-32 h-32 rounded-full border-2 border-indigo-500 lg:border-0">
               <Image
                 src={about.urlPic}
-                alt="avatar"
+                alt="Benoit Garcia Photo de profil"
                 className="transition-all rounded-full grayscale hover:grayscale-0 lg:w-32 lg:h-32"
                 width={350}
                 height={350}

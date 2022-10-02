@@ -4,6 +4,7 @@ import { axios } from "../config/const";
 
 import { SiMongodb, SiNestjs, SiPrisma, SiTailwindcss } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
+import Head from "next/head";
 
 interface SkillsProps {
   description: string;
@@ -61,6 +62,26 @@ const Skills = () => {
 
   return (
     <div className="min-h-screen bg-slate-900 flex">
+      <Head>
+        <meta charSet="utf-8" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+          name="description"
+          content="Benoit Garcia, Développeur fullstack javascript sur Montpellier"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.benoitgarcia.dev/" />
+        <meta property="og:title" content="Benoit Garcia - Compétences" />
+        <meta
+          property="og:description"
+          content="Benoit Garcia, Développeur fullstack javascript sur Montpellier"
+        />
+        <meta property="og:image" content="" />
+
+        <title>Benoit Garcia - Mes compétences</title>
+      </Head>
       <NavBar />
       <div className="text-white p-4 w-full flex flex-col items-center">
         <h1 className="font-bold text-4xl text-indigo-400 uppercase">

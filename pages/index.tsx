@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -28,12 +29,35 @@ const Home: NextPage = () => {
 
   return (
     <div className="min-h-screen bg-slate-900 flex">
+      <Head>
+        <meta charSet="utf-8" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+          name="description"
+          content="Benoit Garcia, Développeur fullstack javascript sur Montpellier"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.benoitgarcia.dev/" />
+        <meta
+          property="og:title"
+          content="Benoit Garcia - Développeur fullstack js"
+        />
+        <meta
+          property="og:description"
+          content="Benoit Garcia, Développeur fullstack javascript sur Montpellier"
+        />
+        <meta property="og:image" content="" />
+
+        <title>Benoit Garcia - Développeur fullstack js</title>
+      </Head>
       <NavBar />
       <div className="text-white p-4 w-full flex flex-col items-center justify-center">
         <div className="transition-all duration-200 rounded-full border-2 border-slate-900 hover:border-indigo-500 w-44 h-44">
           <Image
             src={HomeImage}
-            alt="Image Home Keyboard and coffee"
+            alt="Clavier et café image"
             className="transition-all duration-200 rounded-full grayscale hover:grayscale-0 "
           />
         </div>
