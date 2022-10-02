@@ -47,7 +47,7 @@ const ProjectDetails = () => {
     if (response.data) {
       const newArray: any[] = [];
       data.skillsId.forEach((el: any) => {
-        const find = response.data.find((p) => p.id === el);
+        const find = response.data.find((p: SkillProps) => p.id === el);
         if (find) newArray.push(find);
       });
       setSkills(newArray);
