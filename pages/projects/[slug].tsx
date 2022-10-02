@@ -19,11 +19,19 @@ interface ProjectProps {
   live: string;
 }
 
+interface SkillProps {
+  id: string;
+  description: string;
+  name: string;
+  urlLogo: string;
+  display: boolean;
+}
+
 const ProjectDetails = () => {
   const router = useRouter();
 
   const [project, setProject] = useState<ProjectProps>();
-  const [skills, setSkills] = useState<any[]>([]);
+  const [skills, setSkills] = useState<SkillProps[]>([]);
 
   useEffect(() => {
     if (router.query.slug) awaitGetProjects();
@@ -93,7 +101,7 @@ const ProjectDetails = () => {
             </span>
             <div className="w-full flex flex-wrap space-x-2">
               {skills.length > 0 &&
-                skills.map((el) => (
+                skills.map((el: SkillProps) => (
                   <span
                     key={el.id}
                     className="mt-1 bg-indigo-400 hover:bg-indigo-500 p-2 text-sm rounded-full"
