@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import { axios } from "../config/const";
 
-import { SiMongodb, SiNestjs, SiPrisma, SiTailwindcss } from "react-icons/si";
+import {
+  SiGraphql,
+  SiMongodb,
+  SiNestjs,
+  SiPrisma,
+  SiTailwindcss,
+} from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import Head from "next/head";
 import { AiOutlineLoading } from "react-icons/ai";
@@ -43,6 +49,8 @@ const Skills = () => {
         return <SiTailwindcss className="text-cyan-400" />;
       case "mongo":
         return <SiMongodb className="text-green-400" />;
+      case "graphql":
+        return <SiGraphql className="text-rose-500" />;
     }
   };
 

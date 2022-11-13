@@ -66,7 +66,7 @@ const NavBar = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="/contact">
                   <a className="group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-slate-800 hover:text-indigo-500">
                     <BsMailbox />
                     <span className="absolute left-full w-max top-1/2 ml-4 -translate-y-1/2 rounded bg-indigo-500 px-2 py-1.5 text-xs font-medium text-white opacity-0 group-hover:opacity-100">

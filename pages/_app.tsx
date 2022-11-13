@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 
 import "aos/dist/aos.css";
+import AppContextProvider from "../context/AppContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -14,7 +15,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     });
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <AppContextProvider>
+      <Component {...pageProps} />
+    </AppContextProvider>
+  );
 }
 
 export default MyApp;
