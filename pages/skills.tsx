@@ -5,9 +5,11 @@ import { axios } from "../config/const";
 import {
   SiGraphql,
   SiMongodb,
+  SiMysql,
   SiNestjs,
   SiPrisma,
   SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import Head from "next/head";
@@ -51,6 +53,10 @@ const Skills = () => {
         return <SiMongodb className="text-green-400" />;
       case "graphql":
         return <SiGraphql className="text-rose-500" />;
+      case "typescript":
+        return <SiTypescript className="text-blue-500" />;
+      case "sql":
+        return <SiMysql className="text-orange-500" />;
     }
   };
 

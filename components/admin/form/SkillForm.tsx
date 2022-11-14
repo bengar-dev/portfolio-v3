@@ -16,6 +16,7 @@ export interface SkillData {
   name: string;
   description: string;
   urlLogo: string;
+  id?: string;
 }
 
 export const SkillForm = () => {
@@ -63,7 +64,7 @@ export const SkillForm = () => {
       });
       toggleModal(false);
     }
-    /* window.location.reload(); */
+    window.location.reload();
   };
 
   return (
