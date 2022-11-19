@@ -30,7 +30,7 @@ export const TableData = (props: TableDataProps) => {
 
   useEffect(() => {
     if (tempData.length === 0 && data.length > 0) setTempData(data);
-  }, [data]);
+  }, [data, tempData]);
 
   const router = useRouter();
 
