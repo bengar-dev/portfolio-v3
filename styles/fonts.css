@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+.font-quick {
+  font-family: "Quicksand", sans-serif;
+}
+
+.link-highlight {
+  --tw-text-opacity: 1;
+  color: rgb(73 141 236 / var(--tw-text-opacity));
+  text-decoration: none;
+  background: linear-gradient(
+      rgba(73, 141, 236, 0.25),
+      rgba(73, 141, 236, 0.25)
+    )
+    bottom no-repeat;
+  background-size: 100% 2px;
+  transition: background-size 0.1s;
+  cursor: pointer;
+}
+
+.link-highlight:hover {
+  background-size: 100% 100%;
+}
+
+.highlight {
+  color: rgb(73 141 236 / var(--tw-text-opacity));
+  font-weight: 600;
+}

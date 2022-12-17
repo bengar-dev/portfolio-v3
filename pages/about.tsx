@@ -24,8 +24,12 @@ const About: NextPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    awaitGetAboutInfo();
-  }, []);
+    if (about.content === "") awaitGetAboutInfo();
+    else {
+      const targetContentElement = document.querySelector("#about-content-id");
+      if (targetContentElement) targetContentElement.innerHTML = about.content;
+    }
+  }, [about]);
 
   const awaitGetAboutInfo = async () => {
     setLoading(true);
@@ -88,10 +92,11 @@ const About: NextPage = () => {
                   objectFit="cover"
                 />
               </div>
-              <div className="w-full bg-slate-700 p-2 rounded text-sm">
-                <p className="font-mono first-letter:text-4xl first-letter:font-bold first-letter:float-left first-letter:mr-4 first-letter:text-indigo-400 text-justify">
-                  {about.content}
-                </p>
+              <div className="w-full bg-slate-700 p-2 rounded">
+                <div
+                  id="about-content-id"
+                  className="font-quick text-justify"
+                ></div>
               </div>
             </div>
             <div
