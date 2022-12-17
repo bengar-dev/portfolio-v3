@@ -15,17 +15,17 @@ export const HistoryDate = (props: HistoryDateProps) => {
   const handleStyleColorCategory = (category: string) => {
     switch (category) {
       case "work":
-        return "w-28 flex justify-center items-center bg-cyan-400 text-cyan-800 font-medium p-1";
+        return "rounded-full w-28 flex justify-center items-center bg-cyan-400 text-cyan-800 font-medium p-1";
       case "school":
-        return "w-28 flex justify-center items-center bg-orange-400 text-orange-800 font-medium p-1";
+        return "rounded-full w-28 flex justify-center items-center bg-orange-400 text-orange-800 font-medium p-1";
       case "graduate":
-        return "w-28 flex justify-center items-center bg-rose-400 text-rose-800 font-medium p-1";
+        return "rounded-full w-28 flex justify-center items-center bg-rose-400 text-rose-800 font-medium p-1";
       case "certif":
-        return "w-28 flex justify-center items-center bg-purple-400 text-purple-800 font-medium p-1";
+        return "rounded-full w-28 flex justify-center items-center bg-purple-400 text-purple-800 font-medium p-1";
       case "trophee":
-        return "w-28 flex justify-center items-center bg-yellow-400 text-yellow-800 font-medium p-1";
+        return "rounded-full w-28 flex justify-center items-center bg-yellow-400 text-yellow-800 font-medium p-1";
       case "computer":
-        return "w-28 flex justify-center items-center bg-emerald-400 text-emerald-800 font-medium p-1";
+        return "rounded-full w-28 flex justify-center items-center bg-emerald-400 text-emerald-800 font-medium p-1";
     }
   };
 
@@ -47,13 +47,13 @@ export const HistoryDate = (props: HistoryDateProps) => {
   };
 
   return (
-    <div className="w-full flex space-x-1">
+    <div className="w-full flex space-x-1 p-1 hover:bg-[#060614] rounded-full">
       <div className={handleStyleColorCategory(category)}>
         {format(new Date(date), "MM - yyyy")}
       </div>
-      <div className="pl-1 flex space-x-2 items-center w-full">
+      <div className="pl-1 flex space-x-2 items-center w-full ">
         <span className="text-xl">{handleIconForCategory(category)}</span>
-        <span className="text-sm">{text}</span>
+        <span className="">{text}</span>
       </div>
     </div>
   );

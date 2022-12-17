@@ -43,7 +43,7 @@ const About: NextPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 flex overflow-hidden">
+    <div className="min-h-screen bg-[#000007] flex overflow-hidden font-quick">
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
@@ -72,7 +72,7 @@ const About: NextPage = () => {
       ) : (
         <div className="text-white p-4 w-full flex flex-col items-center">
           <h1 className="font-bold text-4xl text-indigo-400">À PROPOS</h1>
-          <span className="text-xs p-1">
+          <span className="text-sm p-1">
             Qui suis-je ? Mon parcours en quelques mots & dates.
           </span>
           <div className="mt-10 flex flex-col w-full items-center space-y-4 lg:flex-row lg:space-x-4 lg:justify-around">
@@ -92,7 +92,7 @@ const About: NextPage = () => {
                   objectFit="cover"
                 />
               </div>
-              <div className="w-full bg-slate-700 p-2 rounded">
+              <div className="w-full bg-[#060614] p-2 rounded">
                 <div
                   id="about-content-id"
                   className="font-quick text-justify"
