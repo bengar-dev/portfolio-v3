@@ -20,7 +20,12 @@ const Home: NextPage = () => {
           twitter
         </a>
         {" - "}
-        <a href="" target="_blank" className="text-blue-500 hover:font-bold">
+        <a
+          href="https://www.linkedin.com/in/benoit-gar/"
+          target="_blank"
+          className="text-blue-500 hover:font-bold"
+          rel="noreferrer"
+        >
           linkedin
         </a>
       </span>
