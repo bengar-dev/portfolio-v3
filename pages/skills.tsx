@@ -2,20 +2,11 @@ import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import { axios } from "../config/const";
 
-import {
-  SiGraphql,
-  SiMongodb,
-  SiMysql,
-  SiNestjs,
-  SiPrisma,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
-import { FaReact } from "react-icons/fa";
 import Head from "next/head";
 import { AiOutlineLoading } from "react-icons/ai";
+import { SkillCard } from "../components/ui/SkillCard";
 
-interface SkillsProps {
+export interface SkillsProps {
   description: string;
   id: string;
   name: string;
@@ -39,29 +30,8 @@ const Skills = () => {
     setLoading(false);
   };
 
-  const handleIconsForSkills = (value: string) => {
-    switch (value) {
-      case "prisma":
-        return <SiPrisma className="text-emerald-400" />;
-      case "react":
-        return <FaReact className="text-sky-400" />;
-      case "nestjs":
-        return <SiNestjs className="text-red-400" />;
-      case "tailwind":
-        return <SiTailwindcss className="text-cyan-400" />;
-      case "mongo":
-        return <SiMongodb className="text-green-400" />;
-      case "graphql":
-        return <SiGraphql className="text-rose-500" />;
-      case "typescript":
-        return <SiTypescript className="text-blue-500" />;
-      case "sql":
-        return <SiMysql className="text-orange-500" />;
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-slate-900 flex">
+    <div className="min-h-screen bg-[#000007] flex font-quick">
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
@@ -80,7 +50,7 @@ const Skills = () => {
         />
         <meta property="og:image" content="" />
 
-        <title>Benoit Garcia - Mes compétences</title>
+        <title>Benoit Garcia - My skills</title>
       </Head>
       <NavBar />
       {loading ? (
@@ -90,36 +60,40 @@ const Skills = () => {
       ) : (
         <div className="text-white p-4 w-full flex flex-col items-center">
           <h1 className="font-bold text-4xl text-indigo-400 uppercase">
-            Mes compétences
+            My skills
           </h1>
-          <span className="text-xs p-1">
-            Quelles sont les technologies que j&apos;utilise le plus ?
+          <span className=" p-1">
+            Which technologies i&apos;m using the most ?
           </span>
-          <div className="mt-10 flex flex-col w-full justify-center items-center space-y-4 lg:flex-row lg:space-x-4 lg:justify-around">
-            <div className="flex flex-col w-full justify-center items-center space-y-4">
+          <div className="mt-10 flex flex-col w-full justify-center items-center space-y-4">
+            <div className="w-full md:w-1/2 bg-[#060614] p-2 rounded">
+              <div id="test" className="font-quick text-justify">
+                I love to work with <span className="highlight">React</span> and{" "}
+                <span className="highlight">TypeScript</span> when i&apos;m
+                doing front-end developpment. But i&apos;m working also on{" "}
+                <span className="highlight">Vue.js</span> during my work-study
+                contract with <span className="highlight">Kaliop</span>.<br />
+                On back-end side, i like to create{" "}
+                <span className="highlight">GraphQL</span> api with{" "}
+                <span className="highlight">express.js</span> and{" "}
+                <span className="highlight">TypeScript</span>. I also run all my
+                app on <span className="highlight">Docker</span>.
+              </div>
+            </div>
+            <div className="flex flex-row flex-wrap w-full md:w-1/2 justify-center items-center space-y-4">
               {skills.length > 0 &&
                 skills.map((el, index) => (
                   <>
                     {el.display && (
-                      <div
+                      <SkillCard
                         key={el.id}
-                        className="transition-all w-1/2 p-4 bg-slate-800 hover:bg-slate-700 flex justify-around space-x-2 items-center rounded-lg"
-                        data-aos="flip-up"
-                        data-aos-delay={`${index}50`}
-                        data-aos-duration="500"
-                      >
-                        <span className="text-5xl">
-                          {handleIconsForSkills(el.urlLogo)}
-                        </span>
-                        <div className="flex flex-col">
-                          <span className="text-center font-bold">
-                            {el.name}
-                          </span>
-                          <p className="hidden md:flex p-2 text-xs first-letter:font-bold">
-                            {el.description}
-                          </p>
-                        </div>
-                      </div>
+                        description={el.description}
+                        display={el.display}
+                        id={el.id}
+                        name={el.name}
+                        urlLogo={el.urlLogo}
+                        projectId={el.projectId}
+                      />
                     )}
                   </>
                 ))}
@@ -127,7 +101,7 @@ const Skills = () => {
           </div>
           <div className="mt-10 w-full md:w-2/3">
             <h2 className="text-center font-medium text-indigo-500">
-              Mes compétences en vracs
+              All my random skills
             </h2>
             <div className="p-4 w-full flex flex-wrap justify-center space-x-2 text-sm text-slate-900 font-medium">
               {skills

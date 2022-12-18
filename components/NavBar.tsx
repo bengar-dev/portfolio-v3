@@ -11,13 +11,13 @@ const NavBar = () => {
 
   const handleStyleActiveLink = (target: string) => {
     if (target === router.route.split("/")[1])
-      return "group relative flex justify-center rounded px-2 py-1.5 text-gray-500 bg-slate-800 text-indigo-500";
+      return "group relative flex justify-center rounded px-2 py-1.5 bg-indigo-500 text-white";
     else
-      return "group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-slate-800 hover:text-indigo-500";
+      return "group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-slate-800 hover:text-white";
   };
 
   return (
-    <div className="flex min-h-screen w-16 flex-col justify-between border-r border-indigo-500 bg-slate-900">
+    <div className="flex min-h-screen w-16 flex-col justify-between border-r border-indigo-500 bg-[#000007]">
       <div>
         <div className="">
           <nav className="flex flex-col p-2">
@@ -27,7 +27,7 @@ const NavBar = () => {
                   <a className={handleStyleActiveLink("")}>
                     <AiFillHome />
                     <span className="absolute left-full top-1/2 ml-4 -translate-y-1/2 rounded bg-indigo-500 px-2 py-1.5 text-xs font-medium text-white opacity-0 group-hover:opacity-100">
-                      Accueil
+                      Home
                     </span>
                   </a>
                 </Link>
@@ -38,7 +38,7 @@ const NavBar = () => {
                   <a className={handleStyleActiveLink("about")}>
                     <FaUserAstronaut />
                     <span className="absolute left-full top-1/2 ml-4 w-max -translate-y-1/2 rounded bg-indigo-500 px-2 py-1.5 text-xs font-medium text-white opacity-0 group-hover:opacity-100">
-                      A-propos
+                      About me
                     </span>
                   </a>
                 </Link>
@@ -49,7 +49,7 @@ const NavBar = () => {
                   <a className={handleStyleActiveLink("skills")}>
                     <FaReact />
                     <span className="absolute left-full top-1/2 ml-4 -translate-y-1/2 rounded bg-indigo-500 px-2 py-1.5 text-xs font-medium text-white opacity-0 group-hover:opacity-100">
-                      Compétences
+                      Skills
                     </span>
                   </a>
                 </Link>
@@ -60,17 +60,17 @@ const NavBar = () => {
                   <a className={handleStyleActiveLink("projects")}>
                     <IoMdImages />
                     <span className="absolute left-full top-1/2 ml-4 -translate-y-1/2 rounded bg-indigo-500 px-2 py-1.5 text-xs font-medium text-white opacity-0 group-hover:opacity-100">
-                      Réalisations
+                      Projects
                     </span>
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/contact">
-                  <a className="group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-slate-800 hover:text-indigo-500">
+                  <a className="group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-slate-800 hover:text-white">
                     <BsMailbox />
                     <span className="absolute left-full w-max top-1/2 ml-4 -translate-y-1/2 rounded bg-indigo-500 px-2 py-1.5 text-xs font-medium text-white opacity-0 group-hover:opacity-100">
-                      Me contacter
+                      Contact me
                     </span>
                   </a>
                 </Link>
@@ -80,8 +80,8 @@ const NavBar = () => {
         </div>
       </div>
 
-      <div className="sticky inset-x-0 bottom-0 border-t border-indigo-500 bg-slate-900 p-2 h-40 text-white text-xs flex items-center justify-center">
-        <div className="-rotate-90 text-indigo-500 font-mono text-center flex items-center">
+      <div className="sticky inset-x-0 bottom-0 border-t border-indigo-500 bg-[#000007] p-2 h-40 text-white text-sm flex items-center justify-center">
+        <div className="-rotate-90 text-indigo-500 font-quick text-center flex items-center">
           <BiCopyright className="text-xl text-indigo-300" />{" "}
           <span>copyright 2022</span>
         </div>

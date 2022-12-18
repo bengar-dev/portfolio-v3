@@ -24,8 +24,12 @@ const About: NextPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    awaitGetAboutInfo();
-  }, []);
+    if (about.content === "") awaitGetAboutInfo();
+    else {
+      const targetContentElement = document.querySelector("#about-content-id");
+      if (targetContentElement) targetContentElement.innerHTML = about.content;
+    }
+  }, [about]);
 
   const awaitGetAboutInfo = async () => {
     setLoading(true);
@@ -39,7 +43,7 @@ const About: NextPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 flex overflow-hidden">
+    <div className="min-h-screen bg-[#000007] flex overflow-hidden font-quick">
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
@@ -58,7 +62,7 @@ const About: NextPage = () => {
         />
         <meta property="og:image" content="" />
 
-        <title>Benoit Garcia - A-propos de moi</title>
+        <title>Benoit Garcia - About me</title>
       </Head>
       <NavBar />
       {loading ? (
@@ -67,10 +71,8 @@ const About: NextPage = () => {
         </div>
       ) : (
         <div className="text-white p-4 w-full flex flex-col items-center">
-          <h1 className="font-bold text-4xl text-indigo-400">À PROPOS</h1>
-          <span className="text-xs p-1">
-            Qui suis-je ? Mon parcours en quelques mots & dates.
-          </span>
+          <h1 className="font-bold text-4xl text-indigo-400">ABOUT ME</h1>
+          <span className=" p-1">Who am i ? My history in a few dates.</span>
           <div className="mt-10 flex flex-col w-full items-center space-y-4 lg:flex-row lg:space-x-4 lg:justify-around">
             <div
               className="flex flex-col lg:flex-row items-center space-y-4 lg:space-x-4 lg:w-6/12"
@@ -88,10 +90,11 @@ const About: NextPage = () => {
                   objectFit="cover"
                 />
               </div>
-              <div className="w-full bg-slate-700 p-2 rounded text-sm">
-                <p className="font-mono first-letter:text-4xl first-letter:font-bold first-letter:float-left first-letter:mr-4 first-letter:text-indigo-400 text-justify">
-                  {about.content}
-                </p>
+              <div className="w-full bg-[#060614] p-2 rounded">
+                <div
+                  id="about-content-id"
+                  className="font-quick text-justify"
+                ></div>
               </div>
             </div>
             <div
@@ -101,7 +104,7 @@ const About: NextPage = () => {
               data-aos-delay="500"
             >
               <h2 className="text-lg text-center text-indigo-400 font-medium">
-                Mon histoire en quelques dates
+                My history
               </h2>
               <div className="w-full flex flex-col space-y-2">
                 {Array.isArray(historic) &&
