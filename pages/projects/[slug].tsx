@@ -102,7 +102,7 @@ const ProjectDetails = () => {
                   <Link href={project.github}>
                     <a
                       target="_blank"
-                      className="bg-stone-500 hover:bg-stone-600 p-2 text-sm w-max rounded-lg flex items-center space-x-2"
+                      className="bg-stone-500 border border-stone-500 hover:bg-stone-600 p-2 text-sm w-max rounded flex items-center space-x-2"
                     >
                       <FaGithub />
                       <span>GitHub</span>
