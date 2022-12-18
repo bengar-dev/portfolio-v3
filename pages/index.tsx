@@ -28,7 +28,7 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 flex">
+    <div className="min-h-screen bg-[#000007] flex">
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
@@ -53,8 +53,8 @@ const Home: NextPage = () => {
         <title>Benoit Garcia - Développeur fullstack js</title>
       </Head>
       <NavBar />
-      <div className="text-white p-4 w-full flex flex-col items-center justify-center">
-        <div className="transition-all duration-200 rounded-full border-2 border-slate-900 hover:border-indigo-500 w-44 h-44">
+      <div className="text-white p-4 w-full flex flex-col items-center justify-center font-quick">
+        <div className="transition-all duration-200 rounded-full border-2 border-indigo-500 hover:border-indigo-500 w-44 h-44">
           <Image
             src={HomeImage}
             alt="Clavier et café image"
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
         </div>
         <div className="mt-4 flex flex-col items-center">
           <h1 className="font-bold text-indigo-400 text-4xl">Benoit Garcia</h1>
-          <p className="font-mono text-sm">Développeur fullstack javascript</p>
+          <p className="text-sm">Développeur fullstack javascript</p>
           <div className="mt-6 flex items-center space-x-4 text-2xl">
             <Link href={`https://twitter.com/${socials.twitter}`}>
               <a target="_blank">

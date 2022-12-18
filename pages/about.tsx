@@ -71,10 +71,8 @@ const About: NextPage = () => {
         </div>
       ) : (
         <div className="text-white p-4 w-full flex flex-col items-center">
-          <h1 className="font-bold text-4xl text-indigo-400">À PROPOS</h1>
-          <span className="text-sm p-1">
-            Qui suis-je ? Mon parcours en quelques mots & dates.
-          </span>
+          <h1 className="font-bold text-4xl text-indigo-400">ABOUT ME</h1>
+          <span className=" p-1">Who am i ? My history in a few dates.</span>
           <div className="mt-10 flex flex-col w-full items-center space-y-4 lg:flex-row lg:space-x-4 lg:justify-around">
             <div
               className="flex flex-col lg:flex-row items-center space-y-4 lg:space-x-4 lg:w-6/12"
@@ -106,7 +104,7 @@ const About: NextPage = () => {
               data-aos-delay="500"
             >
               <h2 className="text-lg text-center text-indigo-400 font-medium">
-                Mon histoire en quelques dates
+                My history
               </h2>
               <div className="w-full flex flex-col space-y-2">
                 {Array.isArray(historic) &&
