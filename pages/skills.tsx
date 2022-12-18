@@ -50,7 +50,7 @@ const Skills = () => {
         />
         <meta property="og:image" content="" />
 
-        <title>Benoit Garcia - Mes compétences</title>
+        <title>Benoit Garcia - My skills</title>
       </Head>
       <NavBar />
       {loading ? (

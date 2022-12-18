@@ -30,7 +30,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 flex">
+    <div className="min-h-screen bg-[#000007] flex font-quick">
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
@@ -49,7 +49,7 @@ const Projects = () => {
         />
         <meta property="og:image" content="" />
 
-        <title>Benoit Garcia - Mes réalisations</title>
+        <title>Benoit Garcia - My projects</title>
       </Head>
       <NavBar />
       {loading ? (
@@ -59,11 +59,9 @@ const Projects = () => {
       ) : (
         <div className="text-white p-4 w-full flex flex-col items-center">
           <h1 className="font-bold text-4xl text-indigo-400 uppercase">
-            Mes réalisations
+            My projects
           </h1>
-          <span className="text-xs p-1">
-            Quelques projets pour apercevoir mes connaissances.
-          </span>
+          <span className="p-1">Here few projects.</span>
           <div className="mt-10 flex flex-col w-full justify-center items-center space-y-4 lg:flex-row lg:space-x-4 lg:justify-around">
             <div className="flex flex-col items-center w-full space-y-4">
               {projects.length > 0 &&

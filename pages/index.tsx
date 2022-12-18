@@ -50,7 +50,7 @@ const Home: NextPage = () => {
         />
         <meta property="og:image" content="" />
 
-        <title>Benoit Garcia - Développeur fullstack js</title>
+        <title>Benoit Garcia - Fullstack js Developper</title>
       </Head>
       <NavBar />
       <div className="text-white p-4 w-full flex flex-col items-center justify-center font-quick">

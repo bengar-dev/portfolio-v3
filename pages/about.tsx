@@ -62,7 +62,7 @@ const About: NextPage = () => {
         />
         <meta property="og:image" content="" />
 
-        <title>Benoit Garcia - A-propos de moi</title>
+        <title>Benoit Garcia - About me</title>
       </Head>
       <NavBar />
       {loading ? (
