@@ -3,9 +3,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AiOutlineLoading } from "react-icons/ai";
 import NavBar from "../../components/NavBar";
+import { ProjectCard } from "../../components/ui/ProjectCard";
 import { axios } from "../../config/const";
+import { useGetSkills } from "../../hooks/useGetSkills";
 
-interface ProjectProps {
+export interface ProjectProps {
   id: string;
   description: string;
   name: string;
@@ -63,23 +65,18 @@ const Projects = () => {
           </h1>
           <span className="p-1">Here few projects.</span>
           <div className="mt-10 flex flex-col w-full justify-center items-center space-y-4 lg:flex-row lg:space-x-4 lg:justify-around">
-            <div className="flex flex-col items-center w-full space-y-4">
+            <div className="flex flex-col items-center w-full md:w-2/3 lg:w-1/2 xl:w-1/3 space-y-4">
               {projects.length > 0 &&
                 projects.map((el, index) => (
-                  <div
-                    key={el.id}
-                    className="w-full md:w-3/4 lg:w-2/3 xl:w-1/3"
-                    data-aos="flip-left"
-                    data-aos-duration="1000"
-                    data-aos-delay={`${index}00`}
-                  >
-                    <Link href={`/projects/${el.id}`}>
-                      <div className="cursor-pointer border border-indigo-400 hover:border-cyan-400 p-4 w-full rounded-lg flex flex-col hover:bg-slate-800 space-y-2">
-                        <h2 className="font-bold text-indigo-400">{el.name}</h2>
-                        <p className="text-sm italic">{el.preview}</p>
-                      </div>
-                    </Link>
-                  </div>
+                  <ProjectCard
+                    key={index}
+                    name={el.name}
+                    description={el.description}
+                    id={el.id}
+                    preview={el.preview}
+                    skillsId={el.skillsId}
+                    urlImage={el.urlImage}
+                  />
                 ))}
             </div>
           </div>

@@ -2,10 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export const useGetProjects = () => {
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<any>(false);
 
   useEffect(() => {
-    if (data.length === 0) getProjectsFromApi();
+    if (!data) getProjectsFromApi();
   }, [data]);
 
   const getProjectsFromApi = async () => {
