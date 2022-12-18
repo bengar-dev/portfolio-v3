@@ -30,7 +30,7 @@ export const ButtonForm = (props: ButtonFormProps) => {
 function handleStyleButton({ style }: ButtonFormProps): string {
   switch (style) {
     case "classic":
-      return "transition-all duration-200 p-2 text-sm font-medium bg-cyan-500 hover:bg-cyan-500/80 rounded-md";
+      return "transition-all duration-200 p-2 text-sm font-medium bg-cyan-500 hover:bg-cyan-500/80 rounded";
     case "submit":
       return "transition-all duration-200 p-2 text-sm font-medium bg-emerald-400 hover:bg-emerald-500/80 rounded-md";
     case "edit":

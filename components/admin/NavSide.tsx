@@ -4,7 +4,7 @@ import { GoDashboard } from "react-icons/go";
 import { FiSettings } from "react-icons/fi";
 import { ButtonNav } from "./ButtonNav";
 import { FaHistory, FaReact, FaUserAstronaut, FaUsers } from "react-icons/fa";
-import { AiOutlinePicture } from "react-icons/ai";
+import { AiOutlineMail, AiOutlinePicture } from "react-icons/ai";
 import { useRouter } from "next/router";
 import { getUserInfo } from "../../services/users";
 import { UserInfoProps } from "../../types/user";
@@ -59,6 +59,11 @@ export const NavSide = () => {
             icon={<AiOutlinePicture />}
           />
           <ButtonNav value="Users" target="/admin/users" icon={<FaUsers />} />
+          <ButtonNav
+            value="Messages"
+            target="/admin/message"
+            icon={<AiOutlineMail />}
+          />
           <ButtonNav
             value="Settings"
             target="/admin/settings"
