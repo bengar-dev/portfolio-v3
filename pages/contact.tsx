@@ -29,7 +29,7 @@ const Contact: NextPage = () => {
   const onSubmit = async (data: any) => {
     setLoading(true);
     const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_API}/messages`,
+      `${process.env.NEXT_PUBLIC_API}/message`,
       data
     );
     setLoading(false);
