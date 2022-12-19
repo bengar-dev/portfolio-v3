@@ -7,11 +7,13 @@ import { AppContext } from "../../context/AppContext";
 
 import { ButtonForm } from "../form/ButtonForm";
 import { TbEdit, TbTrash } from "react-icons/tb";
+import { AiFillEye } from "react-icons/ai";
 
 interface TableDataProps {
   headers: string[];
   data: any[];
   target: string;
+  viewEnable?: boolean;
   editEnable?: boolean;
   deleteEnable?: boolean;
 }
@@ -24,6 +26,7 @@ export const TableData = (props: TableDataProps) => {
     headers = [],
     target,
     data,
+    viewEnable = false,
     editEnable = false,
     deleteEnable = false,
   } = props;
@@ -138,6 +141,20 @@ export const TableData = (props: TableDataProps) => {
               </td>
             ))}
             <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900 flex space-x-1">
+              {viewEnable && (
+                <ButtonForm
+                  func={() => {
+                    router.push({
+                      pathname: `/admin/${target}`,
+                      query: { id: data.id },
+                    });
+                    toggleModal(true);
+                  }}
+                  style="submit"
+                  value={<AiFillEye className="text-white" />}
+                  type="button"
+                />
+              )}
               {editEnable && (
                 <ButtonForm
                   func={() => {

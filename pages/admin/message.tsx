@@ -6,6 +6,7 @@ import { ModalForm } from "../../components/admin/ModalForm";
 import { NavSide } from "../../components/admin/NavSide";
 import { TableData } from "../../components/admin/TableData";
 import { TitleContent } from "../../components/admin/TitleContent";
+import { MessageView } from "../../components/admin/view/MessageView";
 import { AlertNotif } from "../../components/ui/AlertNotif";
 import { AppContext } from "../../context/AppContext";
 import { useGetMessages } from "../../hooks/useGetMessages";
@@ -18,7 +19,7 @@ const Messages: NextPage = () => {
     <div className="flex w-full">
       {toggle && (
         <ModalForm>
-          <ProjectForm />
+          <MessageView />
         </ModalForm>
       )}
       <div className="w-2/12">
@@ -39,7 +40,8 @@ const Messages: NextPage = () => {
           <TableData
             headers={["id", "title", "email"]}
             data={data}
-            target="messages"
+            target="message"
+            viewEnable
             deleteEnable
           />
         </div>
