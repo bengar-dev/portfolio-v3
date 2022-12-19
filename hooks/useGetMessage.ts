@@ -14,7 +14,7 @@ export const useGetMessage = () => {
     const id = router.query?.id;
     const token = localStorage.getItem("token") || "";
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API}/messages/${id}`,
+      `${process.env.NEXT_PUBLIC_API}/message/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

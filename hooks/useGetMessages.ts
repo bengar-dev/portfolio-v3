@@ -10,14 +10,11 @@ export const useGetMessages = () => {
 
   const getMessagesFromApi = async () => {
     const token = localStorage.getItem("token") || "";
-    const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API}/messages`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API}/message`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     setData(response.data);
   };
 
